@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: 'IBM Plex Mono', source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@layer base {
+    :root {
+        /* DMS Brand Colors - Primary: Navy Blue, Secondary: Cyan */
+        --background: 210 20% 98%;
+        --foreground: 220 50% 15%;
+        
+        /* Card and Surface */
+        --card: 0 0% 100%;
+        --card-foreground: 220 50% 15%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 220 50% 15%;
+        
+        /* Primary: DMS Darker Blue (#1e40af) - Matching logo */
+        --primary: 221 83% 40%;
+        --primary-foreground: 0 0% 100%;
+        --primary-light: 221 83% 53%;
+        --primary-dark: 221 83% 30%;
+        
+        /* Secondary: DMS Medium Blue (#3b82f6) */
+        --secondary: 221 91% 60%;
+        --secondary-foreground: 0 0% 100%;
+        --secondary-light: 221 91% 70%;
+        
+        /* Accent: Bright Cyan */
+        --accent: 195 95% 48%;
+        --accent-foreground: 0 0% 100%;
+        
+        /* DMS Red Accent */
+        --dms-red: 0 85% 45%;
+        --dms-red-foreground: 0 0% 100%;
+        
+        /* Muted */
+        --muted: 210 20% 96%;
+        --muted-foreground: 220 30% 45%;
+        
+        /* Status Colors - Health Indicators */
+        --status-healthy: 142 76% 36%;
+        --status-healthy-foreground: 0 0% 100%;
+        --status-warning: 45 93% 47%;
+        --status-warning-foreground: 220 50% 15%;
+        --status-critical: 0 84% 60%;
+        --status-critical-foreground: 0 0% 100%;
+        --status-maintenance: 220 76% 48%;
+        --status-maintenance-foreground: 0 0% 100%;
+        
+        /* Destructive */
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        
+        /* Border and Input */
+        --border: 220 20% 88%;
+        --input: 220 20% 88%;
+        --ring: 220 76% 22%;
+        
+        /* Chart Colors - DMS Palette */
+        --chart-1: 220 76% 22%;
+        --chart-2: 195 85% 55%;
+        --chart-3: 142 76% 36%;
+        --chart-4: 45 93% 47%;
+        --chart-5: 0 84% 60%;
+        
+        /* Gradients - DMS Brand */
+        --gradient-primary: linear-gradient(135deg, hsl(220 76% 22%), hsl(220 76% 32%));
+        --gradient-secondary: linear-gradient(135deg, hsl(195 85% 55%), hsl(195 85% 65%));
+        --gradient-dms: linear-gradient(135deg, hsl(220 76% 22%), hsl(195 85% 55%));
+        --gradient-bg: linear-gradient(180deg, hsl(210 20% 98%), hsl(210 25% 95%));
+        --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 98%));
+        
+        /* Shadows - DMS Theme */
+        --shadow-sm: 0 2px 4px -1px hsl(220 50% 15% / 0.06);
+        --shadow-md: 0 4px 12px -2px hsl(220 50% 15% / 0.08);
+        --shadow-lg: 0 10px 25px -5px hsl(220 50% 15% / 0.1);
+        --shadow-xl: 0 20px 40px -10px hsl(220 50% 15% / 0.15);
+        --shadow-primary: 0 8px 20px -6px hsl(220 76% 22% / 0.3);
+        --shadow-secondary: 0 8px 20px -6px hsl(195 85% 55% / 0.25);
+        
+        /* Transitions */
+        --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        
+        --radius: 0.5rem;
+    }
+    
+    .dark {
+        --background: 220 40% 8%;
+        --foreground: 210 20% 98%;
+        
+        --card: 220 35% 12%;
+        --card-foreground: 210 20% 98%;
+        --popover: 220 35% 12%;
+        --popover-foreground: 210 20% 98%;
+        
+        --primary: 221 83% 40%;
+        --primary-foreground: 0 0% 100%;
+        --primary-light: 221 83% 53%;
+        --primary-dark: 221 83% 30%;
+        
+        --secondary: 221 91% 60%;
+        --secondary-foreground: 0 0% 100%;
+        --secondary-light: 221 91% 70%;
+        
+        --accent: 195 95% 55%;
+        --accent-foreground: 0 0% 100%;
+        
+        --dms-red: 0 85% 55%;
+        --dms-red-foreground: 0 0% 100%;
+        
+        --muted: 220 30% 18%;
+        --muted-foreground: 220 20% 65%;
+        
+        --status-healthy: 142 76% 42%;
+        --status-healthy-foreground: 0 0% 100%;
+        --status-warning: 45 93% 52%;
+        --status-warning-foreground: 220 40% 10%;
+        --status-critical: 0 84% 65%;
+        --status-critical-foreground: 0 0% 100%;
+        --status-maintenance: 220 76% 55%;
+        --status-maintenance-foreground: 0 0% 100%;
+        
+        --destructive: 0 84% 65%;
+        --destructive-foreground: 0 0% 100%;
+        
+        --border: 220 30% 22%;
+        --input: 220 30% 22%;
+        --ring: 220 76% 45%;
+        
+        --chart-1: 220 76% 45%;
+        --chart-2: 195 85% 60%;
+        --chart-3: 142 76% 42%;
+        --chart-4: 45 93% 52%;
+        --chart-5: 0 84% 65%;
+        
+        --gradient-primary: linear-gradient(135deg, hsl(220 76% 35%), hsl(220 76% 50%));
+        --gradient-secondary: linear-gradient(135deg, hsl(195 85% 50%), hsl(195 85% 65%));
+        --gradient-dms: linear-gradient(135deg, hsl(220 76% 35%), hsl(195 85% 60%));
+        --gradient-bg: linear-gradient(180deg, hsl(220 40% 8%), hsl(220 35% 10%));
+        --gradient-card: linear-gradient(145deg, hsl(220 35% 12%), hsl(220 30% 14%));
+        
+        --shadow-sm: 0 2px 4px -1px hsl(0 0% 0% / 0.3);
+        --shadow-md: 0 4px 12px -2px hsl(0 0% 0% / 0.4);
+        --shadow-lg: 0 10px 25px -5px hsl(0 0% 0% / 0.5);
+        --shadow-xl: 0 20px 40px -10px hsl(0 0% 0% / 0.6);
+        --shadow-primary: 0 8px 20px -6px hsl(220 76% 45% / 0.4);
+        --shadow-secondary: 0 8px 20px -6px hsl(195 85% 60% / 0.35);
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        background: var(--gradient-bg);
+        min-height: 100vh;
+    }
+}
+
+@layer components {
+    /* Custom scrollbar */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-track {
+        @apply bg-muted rounded;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-primary/30 rounded;
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        @apply bg-primary/50;
+    }
+    
+    /* Status badge animations */
+    .status-pulse {
+        animation: pulse-status 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    @keyframes pulse-status {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.7;
+        }
+    }
+    
+    /* Fade in animation */
+    .fade-in {
+        animation: fadeIn 0.5s ease-in;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@layer utilities {
+    .text-gradient-primary {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .shadow-primary {
+        box-shadow: var(--shadow-primary);
+    }
+    
+    .shadow-secondary {
+        box-shadow: var(--shadow-secondary);
+    }
+    
+    .transition-smooth {
+        transition: var(--transition-smooth);
+    }
+    
+    .transition-bounce {
+        transition: var(--transition-bounce);
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
