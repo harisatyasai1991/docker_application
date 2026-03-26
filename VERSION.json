@@ -1,0 +1,21 @@
+{
+  "version": "2.5.1",
+  "customer_code": "DMS",
+  "customer_name": "DMS Insight SaaS",
+  "release_date": "2026-03-23",
+  "release_type": "stable",
+  "modules": [
+    "asset_performance",
+    "online_monitoring",
+    "production_testing"
+  ],
+  "features_in_release": [
+    "Daily Operational Logs with OCR Camera Capture",
+    "Branding Logo Base64 Persistence",
+    "AI Demo Company Generator",
+    "Company Factory Reset",
+    "Feature Flags System",
+    "Dynamic Region Risk Heatmap",
+    "Complete Company Export/Import"
+  ]
+}
